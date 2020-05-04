@@ -164,6 +164,11 @@ variable "subnet_ids" {
   type        = "list"
 }
 
+variable "aws_db_subnet_group_name" {
+  description = "Name for aws_db_subnet_group"
+  type = "string"
+}
+
 variable "vpc_id" {
   type        = "string"
   description = "VPC ID the DB instance will be created in"
