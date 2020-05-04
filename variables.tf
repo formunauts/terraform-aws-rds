@@ -167,6 +167,7 @@ variable "subnet_ids" {
 variable "aws_db_subnet_group_name" {
   description = "Name for aws_db_subnet_group"
   type = "string"
+  default=""
 }
 
 variable "vpc_id" {
