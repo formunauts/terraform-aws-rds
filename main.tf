@@ -111,6 +111,7 @@ resource "aws_security_group" "default" {
   name        = "${length(var.sg_name) > 0 ? var.sg_name :module.label.id}"
   description = "${length(var.sg_description) > 0 ? var.sg_description : local.sg_default_description}"
   vpc_id      = "${var.vpc_id}"
+  tags        = "${module.label.tags}"
 }
 
 resource "aws_security_group_rule" "ingress_security_groups" {
