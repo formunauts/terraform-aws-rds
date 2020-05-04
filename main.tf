@@ -107,8 +107,8 @@ resource "aws_db_subnet_group" "default" {
 
 resource "aws_security_group" "default" {
   count       = "${var.enabled == "true" ? 1 : 0}"
-  name        = "${module.label.id}"
-  description = "RDS Security Group"
+  name        = "${length(var.sg_name) > 0 ? var.sg_name :module.label.id}"
+  description = "${length(var.sg_description) > 0 ? var.sg_description : 'RDS Security Group'}"
   vpc_id      = "${var.vpc_id}"
   tags        = "${module.label.tags}"
 }

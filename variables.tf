@@ -36,6 +36,16 @@ variable "security_group_ids" {
   description = "The IDs of the security groups from which to allow `ingress` traffic to the DB instance"
 }
 
+variable "sg_description" {
+  type        = "string"
+  default     = ""
+}
+
+variable "sg_name" {
+  type        = "string"
+  default     = ""
+}
+
 variable "allowed_cidr_blocks" {
   type        = "list"
   default     = []
